@@ -7,7 +7,7 @@ struct MovieResponce : Codable{
 
 struct Movie : Codable, Identifiable{
     let id: Int
-    let tittle: String
+    let title: String
     let overview: String
     let posterPath: String?
     let releaseDate: String

@@ -6,7 +6,17 @@ struct MovieListView: View {
         VStack{
             List(movies){ movie in
                 VStack(alignment: .leading){
-                    Text(movie.tittle)
+                    Text(movie.title)
+                }
+            }
+        }
+        .onAppear{
+            Task{
+                do{
+                    let fetchMovies = try await NetworkManager.shared.fetchMovies()
+                    movies = fetchMovies
+                }catch{
+                    print("error in fetch")
                 }
             }
         }
