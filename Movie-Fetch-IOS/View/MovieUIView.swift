@@ -9,6 +9,9 @@ struct MovieUIView: View {
                 ScrollMovieView()
                     .foregroundStyle(.white)
                     .padding()
+                
+                MovieSectionView()
+                
                 Spacer()
                 
                 NavbarView()
