@@ -11,6 +11,8 @@ class NetworkManager {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
         }
 
+      
+        
         print("Fetching movies from URL: \(urlString)")
 
         let (data, _) = try await URLSession.shared.data(from: url)
@@ -20,7 +22,10 @@ class NetworkManager {
             print("Raw JSON: \(jsonString)")
         }
 
-        let movieResponse = try JSONDecoder().decode(MovieResponse.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let movieResponse = try decoder.decode(MovieResponse.self, from: data)
+
         return movieResponse.results
     }
     
@@ -39,7 +44,10 @@ class NetworkManager {
             print("Raw JSON: \(jsonString)")
         }
 
-        let movieResponse = try JSONDecoder().decode(MovieResponse.self, from: data)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let movieResponse = try decoder.decode(MovieResponse.self, from: data)
+
         return movieResponse.results
     }
 }
