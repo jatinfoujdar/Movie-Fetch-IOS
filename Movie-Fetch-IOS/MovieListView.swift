@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MovieListView: View {
     @State private var movies: [Movie] = []
-    
+
     var body: some View {
         VStack {
             if movies.isEmpty {
@@ -11,8 +11,29 @@ struct MovieListView: View {
             } else {
                 List(movies) { movie in
                     VStack(alignment: .leading) {
-                        Text(movie.title) 
+                        if let posterUrl = movie.posterUrl {
+                            AsyncImage(url: posterUrl) { image in
+                                image.resizable()
+                                    .scaledToFit()
+                                    .frame(width: 100, height: 150)
+                            } placeholder: {
+                                ProgressView() 
+                            }
+                        }
+                        
+                        Text(movie.title)
                             .font(.headline)
+                            .padding(.top, 5)
+                        
+                        Text(movie.overview)
+                            .font(.subheadline)
+                            .lineLimit(3)
+                            .padding(.top, 5)
+                        
+                        Text("Release Date: \(movie.releaseDate ?? "Unknown")")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
+                            .padding(.top, 5)
                     }
                     .padding()
                 }
