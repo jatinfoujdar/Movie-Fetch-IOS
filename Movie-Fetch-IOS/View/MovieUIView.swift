@@ -11,7 +11,10 @@ struct MovieUIView: View {
                     .padding()
                 Spacer()
                 
+                NavbarView()
+                    
             }
+            
         }
     }
 }
