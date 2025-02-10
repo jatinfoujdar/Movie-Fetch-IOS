@@ -2,7 +2,9 @@ import SwiftUI
 
 struct MovieListView: View {
     @State private var movies: [Movie] = []
-
+    @State private var searchQuery: String = ""
+    @State private var isSearching: Bool = false
+    
     var body: some View {
         VStack {
             if movies.isEmpty {
@@ -11,17 +13,7 @@ struct MovieListView: View {
             } else {
                 List(movies) { movie in
                     VStack(alignment: .leading) {
-                        if let posterUrl = movie.posterUrl {
-                            AsyncImage(url: posterUrl) { image in
-                                image.resizable()
-                                    .scaledToFit()
-                                    .frame(width: 100, height: 150)
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            
-                        }
-                        
+                       
                         Text(movie.title)
                             .font(.headline)
                             .padding(.top, 5)
