@@ -17,8 +17,9 @@ struct MovieListView: View {
                                     .scaledToFit()
                                     .frame(width: 100, height: 150)
                             } placeholder: {
-                                ProgressView() 
+                                ProgressView()
                             }
+                            
                         }
                         
                         Text(movie.title)
