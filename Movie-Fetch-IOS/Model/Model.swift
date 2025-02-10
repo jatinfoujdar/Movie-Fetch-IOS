@@ -23,6 +23,31 @@ struct Movie: Identifiable, Codable {
         case releaseDate = "release_date"
         case posterPath = "poster_path"
     }
+    
+}
+
+
+struct TabBar: Identifiable {
+    var id = UUID()
+    var iconname: String
+    var tab: TabIcon
+    var index: Int
+}
+
+let tabitem = [
+    TabBar(iconname: "house", tab: .home, index: 0),
+    TabBar(iconname: "magnifyingglass", tab: .card, index: 1),
+    TabBar(iconname: "star", tab: .favorite, index: 2),
+    TabBar(iconname: "square.stack", tab: .purchase, index: 3),
+    TabBar(iconname: "person", tab: .notification, index: 4),
+]
+
+enum TabIcon: String {
+    case home
+    case card
+    case favorite
+    case purchase
+    case notification
 }
 
 
