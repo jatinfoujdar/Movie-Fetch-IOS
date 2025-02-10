@@ -7,7 +7,7 @@ struct NavbarView: View {
     @State var Flashing = false
     
     var body: some View {
-        VStack{
+        VStack {
             ZStack(alignment: .bottom) {
                 HStack {
                     ForEach(tabitem) { item in
@@ -16,28 +16,28 @@ struct NavbarView: View {
                         Image(systemName: item.iconname)
                             .font(.title2)
                             .bold()
-                            .foregroundStyle(.gray.opacity(0.4))
+                            .foregroundStyle(selectedTab == item.tab ? .yellow : .gray.opacity(0.4))
                             .onTapGesture {
                                 withAnimation(.spring()) {
                                     selectedTab = item.tab
-                                    Xoffset = CGFloat(item.index) * 69
+                                    Xoffset = CGFloat(item.index) * (UIScreen.main.bounds.width / CGFloat(tabitem.count))
                                 }
                             }
                         Spacer()
                     }
-                    .frame(width: 23)
                 }
                 .frame(maxWidth: .infinity)
                 .frame(height: 70)
                 .background(Color.bg, in: .rect(cornerRadius: 24))
-                .overlay(alignment: .topLeading) {
-                    VStack{
+                .overlay(alignment: .bottomLeading) {
+                    VStack {
                         RoundedRectangle(cornerRadius: 10)
+                            .foregroundStyle(.yellow)
                             .frame(width: 50, height: 4)
                         LightShape()
                             .frame(height: 70)
                     }
-                    .offset(x: 35, y: 0)
+                    .offset(x: (UIScreen.main.bounds.width / CGFloat(tabitem.count) - 50) / 2, y: 0)
                     .offset(x: Xoffset)
                 }
             }

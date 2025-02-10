@@ -46,7 +46,7 @@ struct LineShape: Shape {
 }
 
 extension Color {
-    static let light = Color(red: 1.0, green: 0.9, blue: 0.8)
+    static let light = Color(red: 1.0, green: 1, blue: 0.1)
     static let bg = Color(red: 0.1, green: 0.1, blue: 0.1)
 }
 
