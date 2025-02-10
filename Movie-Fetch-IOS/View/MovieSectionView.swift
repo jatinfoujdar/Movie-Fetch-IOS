@@ -1,15 +1,15 @@
 import SwiftUI
 
 struct MovieSectionView: View {
-    let images: [(imageName: String, title: String)] = [
-        ("1", "Movie 1"),
-        ("2", "Movie 2"),
-        ("3", "Movie 3"),
-        ("5", "Movie 5"),
-        ("6", "Movie 6"),
-        ("7", "Movie 7"),
-        ("8", "Movie 8"),
-        ("9", "Movie 9")
+    let images: [(imageName: String, title: String, genre: String)] = [
+        ("1", "Solo Leveling", "Action, Fantasy"),
+        ("2", "Better Man", "Drama, Romance"),
+        ("3", "Ne Zha 2", "Animation, Adventure"),
+        ("5", "Newtopia", "Sci-Fi, Thriller"),
+        ("6", "Thunderbolts", "Action, Superhero"),
+        ("7", "Moana 2", "Animation, Adventure"),
+        ("8", "Wolf Man", "Horror, Thriller"),
+        ("9", "The Other", "Mystery, Drama")
     ]
 
     var body: some View {
@@ -31,8 +31,13 @@ struct MovieSectionView: View {
                                     }
                                 
                                 Text(movie.title)
-                                    .font(.caption)
+                                    .foregroundStyle(.white)
+                                    .font(.headline)
                                     .lineLimit(1)
+                                
+                                Text(movie.genre)
+                                    .font(.caption)
+                                    .foregroundStyle(.white)
                             }
                             .zIndex(-Double(index))
                         }
