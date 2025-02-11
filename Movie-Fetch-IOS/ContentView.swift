@@ -9,7 +9,7 @@ struct ContentView: View {
             case .home:
                 MovieUIView()
             case .card:
-                Text("Card View")
+                MovieListView()
             case .favorite:
                 Text("Favorite View")
             case .purchase:
@@ -17,7 +17,9 @@ struct ContentView: View {
             case .notification:
                 Text("Notification View")
             }
-            Spacer()
+            
+            NavbarView()
+            
         }
     }
 }

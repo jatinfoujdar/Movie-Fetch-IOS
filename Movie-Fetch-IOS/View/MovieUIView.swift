@@ -27,11 +27,6 @@ struct MovieUIView: View {
                 }
             }
             
-            
-            VStack {
-                Spacer()
-                NavbarView()
-            }
         }
     }
 }
