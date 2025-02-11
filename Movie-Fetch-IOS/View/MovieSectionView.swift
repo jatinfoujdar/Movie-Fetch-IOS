@@ -14,6 +14,10 @@ struct MovieSectionView: View {
 
     var body: some View {
         ZStack {
+            Color.black
+                .ignoresSafeArea()
+                .blur(radius: 20)
+
             VStack(alignment: .leading, spacing: 10) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -29,12 +33,14 @@ struct MovieSectionView: View {
                                             .rotation3DEffect(.degrees(-12), axis: (x: 0, y: 1, z: 0), perspective: 0.8)
                                             .scaleEffect(scale(phase: phase), anchor: .leading)
                                     }
+                                    .shadow(color: Color.green.opacity(0.8), radius: 10, x: 0, y: 0)
+                                
                                 
                                 Text(movie.title)
                                     .foregroundStyle(.white)
                                     .font(.headline)
                                     .lineLimit(1)
-                                
+
                                 Text(movie.genre)
                                     .font(.caption)
                                     .foregroundStyle(.white)
@@ -49,7 +55,6 @@ struct MovieSectionView: View {
         }
     }
 
-   
     func scale(phase: ScrollTransitionPhase) -> CGFloat {
         switch phase {
         case .topLeading:
@@ -61,6 +66,7 @@ struct MovieSectionView: View {
         }
     }
 }
+
 
 #Preview {
     MovieSectionView()

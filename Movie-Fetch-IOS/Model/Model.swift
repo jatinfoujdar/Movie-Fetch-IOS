@@ -50,4 +50,9 @@ enum TabIcon: String {
     case notification
 }
 
-
+struct Card: Identifiable {
+    let id = UUID()
+    let imageName: String
+    let title: String
+    let genre: String
+}
