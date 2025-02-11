@@ -93,6 +93,7 @@ struct MovieCard: View {
                 .font(.caption)
                 .foregroundColor(.gray)
         }
+  
     }
 }
 

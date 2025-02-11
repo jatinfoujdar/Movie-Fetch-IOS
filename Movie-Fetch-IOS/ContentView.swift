@@ -1,21 +1,24 @@
-//
-//  ContentView.swift
-//  Movie-Fetch-IOS
-//
-//  Created by jatin foujdar on 09/02/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: TabIcon = .home
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+           
+            switch selectedTab {
+            case .home:
+                MovieUIView()
+            case .card:
+                Text("Card View")
+            case .favorite:
+                Text("Favorite View")
+            case .purchase:
+                Text("Purchase View")
+            case .notification:
+                Text("Notification View")
+            }
+            Spacer()
         }
-        .padding()
     }
 }
 
