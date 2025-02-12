@@ -7,7 +7,7 @@ struct MovieUIView: View {
             LinearGradient(gradient: Gradient(colors: [Color.black, Color.black.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
             
-        
+            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
                     ScrollMovieView()
@@ -24,9 +24,11 @@ struct MovieUIView: View {
                     Spacer()
                     MovieDisplayView()
                         .preferredColorScheme(.dark)
+                    
                 }
+               
             }
-            
+          
         }
     }
 }

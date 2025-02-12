@@ -56,3 +56,8 @@ struct Card: Identifiable {
     let title: String
     let genre: String
 }
+
+
+
+
+

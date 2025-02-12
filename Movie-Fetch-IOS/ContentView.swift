@@ -1,10 +1,12 @@
 import SwiftUI
 
+
 struct ContentView: View {
     @State private var selectedTab: TabIcon = .home
+    
     var body: some View {
         VStack {
-           
+          
             switch selectedTab {
             case .home:
                 MovieUIView()
@@ -17,12 +19,11 @@ struct ContentView: View {
             case .notification:
                 Text("Notification View")
             }
-            
-            NavbarView()
-            
         }
+        NavbarView()
     }
 }
+
 
 #Preview {
     ContentView()

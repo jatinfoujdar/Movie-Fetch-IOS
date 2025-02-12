@@ -35,7 +35,7 @@ struct NavbarView: View {
                             .foregroundStyle(.yellow)
                             .frame(width: 50, height: 4)
                         LightShape()
-                            .frame(height: 70)
+                            .frame(height: 60)
                     }
                     .offset(x: (UIScreen.main.bounds.width / CGFloat(tabitem.count) - 50) / 2, y: 0)
                     .offset(x: Xoffset)

@@ -14,13 +14,17 @@ struct MovieCardView: View {
     ]
     
     var body: some View {
-        HStack{
-            Text("For You")
-                .fontWeight(.bold)
-            Spacer()
-            Text("See All")
-                .foregroundStyle(.gray)
-                .fontWeight(.bold)
+        VStack{
+            HStack{
+                Text("For You")
+                    .fontWeight(.bold)
+                Spacer()
+                
+                Text("See All")
+                    .foregroundStyle(.gray)
+                    .fontWeight(.bold)
+            }
+            Divider()
         }
         .padding()
             ScrollView(.horizontal, showsIndicators: false) {

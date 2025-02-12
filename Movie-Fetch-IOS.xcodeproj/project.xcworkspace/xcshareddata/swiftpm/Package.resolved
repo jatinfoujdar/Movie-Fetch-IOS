@@ -1,0 +1,15 @@
+{
+  "originHash" : "fe80d800fd3546609c8e9654610353e79fda7758e5303f523f9d300219eddff7",
+  "pins" : [
+    {
+      "identity" : "rive-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/rive-app/rive-ios.git",
+      "state" : {
+        "revision" : "f9da4f2c1f729e69c90a056068f81e743b2a472e",
+        "version" : "6.6.1"
+      }
+    }
+  ],
+  "version" : 3
+}
