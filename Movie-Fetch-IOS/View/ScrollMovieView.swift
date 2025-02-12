@@ -18,7 +18,7 @@ struct ScrollMovieView: View {
                     }
                 }
             }
-        .padding()
+            .padding()
     }
 }
 

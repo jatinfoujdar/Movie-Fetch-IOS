@@ -3,16 +3,27 @@ import SwiftUI
 struct MovieUIView: View {
     var body: some View {
         ZStack {
-            
-            LinearGradient(gradient: Gradient(colors: [Color.black, Color.black.opacity(0.5)]), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.all)
-            
-            
             ScrollView(.vertical, showsIndicators: false) {
                 VStack {
+                    
+                    HStack{
+                        Text("iNox")
+                            .font(.title)
+                            .fontWeight(.bold)
+                        Spacer()
+                        Image("1")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50, height: 50)
+                            .clipShape(Circle())
+                            .overlay(Circle().stroke(Color.red, lineWidth: 2))
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.horizontal)
+                    
                     ScrollMovieView()
                         .foregroundStyle(.white)
-                        .padding()
+                     
                     
                     MovieSectionView()
                     
