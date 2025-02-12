@@ -26,9 +26,8 @@ struct MovieUIView: View {
                         .preferredColorScheme(.dark)
                     
                 }
-               
+                
             }
-          
         }
     }
 }
