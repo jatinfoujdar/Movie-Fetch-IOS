@@ -7,7 +7,6 @@ struct ContentView: View {
     var body: some View {
         RivePullToRefreshView() {
             VStack {
-                
                 switch selectedTab {
                 case .home:
                     MovieUIView()
@@ -21,12 +20,10 @@ struct ContentView: View {
                     Text("Notification View")
                 }
             }
+        } onRefresh: {
+            try? await Task.sleep(nanoseconds: 3_000_000_000)
         }
-                onRefresh: {
-                    try? await Task.sleep(nanoseconds: 3_000_000_000)
-                }
-        
-        NavbarView()
+        NavbarView(selectedTab: $selectedTab)
     }
 }
 

@@ -1,7 +1,8 @@
 import SwiftUI
 
 struct NavbarView: View {
-    @State var selectedTab: TabIcon = .home
+    @Binding var selectedTab: TabIcon 
+    
     @State var Xoffset: CGFloat = 0
     @State var isVisible = true
     @State var Flashing = false
@@ -45,7 +46,8 @@ struct NavbarView: View {
     }
 }
 
+
 #Preview {
-    NavbarView()
+    NavbarView(selectedTab: .constant(.home))
         .preferredColorScheme(.dark)
 }
