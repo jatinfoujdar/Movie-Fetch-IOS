@@ -37,10 +37,13 @@ struct MovieListView: View {
                                 .scaledToFit()
                                 .frame(width: 120, height: 180)
                         } placeholder: {
-                            ProgressView()
+                            Image(systemName: "film")
+                                .resizable()
+                                .scaledToFit()
                                 .frame(width: 120, height: 180)
+                                .foregroundColor(.gray)
                         }
-                        .padding(.top, 5)
+                                           .padding(.top, 5)
                         
                         Text(movie.title)
                             .font(.headline)
@@ -81,8 +84,10 @@ struct MovieListView: View {
             }
         }
     }
+    
 }
 
 #Preview {
     MovieListView()
+        .preferredColorScheme(.dark)
 }

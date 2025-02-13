@@ -2,7 +2,13 @@ import SwiftUI
 
 struct MovieDetailedView: View {
     var body: some View {
-        Image("8")
+        Image("4")
+            .resizable()
+            .scaledToFit()
+        
+        Spacer()
+        
+        
     }
 }
 

@@ -10,10 +10,8 @@ class NetworkManager {
         guard let url = URL(string: urlString) else {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
         }
-
-      
         
-        print("Fetching movies from URL: \(urlString)")
+//        print("Fetching movies from URL: \(urlString)")
 
         let (data, _) = try await URLSession.shared.data(from: url)
         
@@ -29,20 +27,17 @@ class NetworkManager {
         return movieResponse.results
     }
     
+    
     func searchMovies(query: String) async throws -> [Movie] {
         let urlString = "\(Constant.baseURL)/search/movie?api_key=\(Constant.apikey)&query=\(query)"
         guard let url = URL(string: urlString) else {
             throw NSError(domain: "Invalid URL", code: 0, userInfo: nil)
         }
 
-        print("Fetching movies from URL: \(urlString)")
+//        print("Fetching movies from URL: \(urlString)")
 
         let (data, _) = try await URLSession.shared.data(from: url)
-        
-        // Log the raw JSON data
-        if let jsonString = String(data: data, encoding: .utf8) {
-            print("Raw JSON: \(jsonString)")
-        }
+    
 
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
